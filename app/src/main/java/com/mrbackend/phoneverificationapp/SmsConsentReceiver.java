@@ -25,7 +25,6 @@ public class SmsConsentReceiver extends BroadcastReceiver {
             switch (status.getStatusCode()) {
 
                 case CommonStatusCodes.SUCCESS:
-                    // پیامک رسید → گوگل Allow/Deny را باز می‌کند
                     Intent consentIntent = extras.getParcelable(SmsRetriever.EXTRA_CONSENT_INTENT);
                     if (consentIntent != null) {
                         Intent i = new Intent(context, VerifyActivity.class);
